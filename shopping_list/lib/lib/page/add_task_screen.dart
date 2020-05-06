@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:shopping_list/core/models/card.dart';
+import 'package:shopping_list/core/viewmodels/card_model.dart';
 
 import 'package:shopping_list/lib/scopedmodel/todo_list_model.dart';
 import 'package:shopping_list/lib/model/task_model.dart';
@@ -22,6 +26,29 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
   Color taskColor;
   IconData taskIcon;
 
+  String dateOfCard;
+  String title;
+  String description;
+  String color;
+  String iconicSymbol;
+
+  addDataCard(){
+    print("card creation started");
+
+    DocumentReference docref = Firestore.instance.collection("ShoppingList").document();
+
+    Map<String,dynamic> cardDoc = {
+      "color":taskColor.value,
+      "data":"testdate",
+      "description":"testdescription",
+      "icon":taskIcon.codePoint,
+      "title":newTask
+    };
+    docref.setData(cardDoc).whenComplete((){
+      print("card creation completed");
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -34,6 +61,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    //importing card model for firebase
+   // var cardProvider = new CardCRUDModel();
+
     return ScopedModelDescendant<TodoListModel>(
       builder: (BuildContext context, Widget child, TodoListModel model) {
         return Scaffold(
@@ -114,7 +145,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 icon: Icon(Icons.save),
                 backgroundColor: taskColor,
                 label: Text('Create New Card'),
-                onPressed: () {
+                onPressed: () async {
                   if (newTask.isEmpty) {
                     final snackBar = SnackBar(
                       content: Text(
@@ -129,6 +160,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       codePoint: taskIcon.codePoint,
                       color: taskColor.value
                     ));
+                  //  cardProvider.addCard(CardData("id", "dateOfCard", newTask, description,  taskColor.value.toString(), taskIcon.codePoint.toString()));
+                    addDataCard();
                     Navigator.pop(context);
                   }
                 },

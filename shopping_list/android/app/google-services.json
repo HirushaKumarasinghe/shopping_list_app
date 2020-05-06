@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "885448521021",
+    "firebase_url": "https://shopping-list-ctse-we-65.firebaseio.com",
+    "project_id": "shopping-list-ctse-we-65",
+    "storage_bucket": "shopping-list-ctse-we-65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885448521021:android:a5479b80be20df0997c154",
+        "android_client_info": {
+          "package_name": "com.example.shopping_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885448521021-271lof9k9qn365p2nr3u6aca9t4gnn5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWEafnt-bezQDwGM3DzCqoBVfh634xKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885448521021-271lof9k9qn365p2nr3u6aca9t4gnn5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

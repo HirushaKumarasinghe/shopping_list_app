@@ -15,7 +15,12 @@ import 'package:shopping_list/lib/component/todo_badge.dart';
 import 'package:shopping_list/lib/page/privacy_policy.dart';
 import 'package:shopping_list/lib/model/data/choice_card.dart';
 
-void main() => runApp(MyApp());
+import '../locator.dart';
+
+void main(){
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -186,6 +191,7 @@ class _MyHomePageState extends State<MyHomePage>
                         key: _backdropKey,
                         flex: 1,
                         child: NotificationListener<ScrollNotification>(
+                          // ignore: missing_return
                           onNotification: (notification) {
                             if (notification is ScrollEndNotification) {
                               print(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:shopping_list/lib/scopedmodel/todo_list_model.dart';
 import 'package:shopping_list/lib/model/todo_model.dart';
 import 'package:shopping_list/lib/utils/color_utils.dart';
@@ -25,6 +27,8 @@ class AddTodoScreen extends StatefulWidget {
 class _AddTodoScreenState extends State<AddTodoScreen> {
   String newTask;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  
+
 
   @override
   void initState() {

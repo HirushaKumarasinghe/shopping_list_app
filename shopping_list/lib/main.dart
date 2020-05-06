@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -15,13 +16,18 @@ import 'package:shopping_list/lib/component/todo_badge.dart';
 import 'package:shopping_list/lib/page/privacy_policy.dart';
 import 'package:shopping_list/lib/model/data/choice_card.dart';
 
-void main() => runApp(MyApp());
+import 'locator.dart';
+
+void main(){
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var app = MaterialApp(
-      title: 'Shopping List',
+      title: 'Todo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,

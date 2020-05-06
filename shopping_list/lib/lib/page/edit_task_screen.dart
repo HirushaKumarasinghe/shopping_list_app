@@ -6,6 +6,8 @@ import 'package:shopping_list/lib/model/task_model.dart';
 import 'package:shopping_list/lib/component/iconpicker/icon_picker_builder.dart';
 import 'package:shopping_list/lib/component/colorpicker/color_picker_builder.dart';
 
+import 'dart:developer';
+
 class EditTaskScreen extends StatefulWidget {
   final String taskId;
   final String taskName;
@@ -136,6 +138,8 @@ class _EditCardScreenState extends State<EditTaskScreen> {
                     Scaffold.of(context).showSnackBar(snackBar);
                     // _scaffoldKey.currentState.showSnackBar(snackBar);
                   } else {
+                    log('data:' + newTask + 'and'+taskColor.toString()+' and ' + ' and ');
+
                     model.updateTask(Task(
                       newTask,
                       codePoint: taskIcon.codePoint,
