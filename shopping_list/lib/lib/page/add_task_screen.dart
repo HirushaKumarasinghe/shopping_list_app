@@ -72,7 +72,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             title: Text(
-              'New Category',
+              'New Card',
               style: TextStyle(color: Colors.black),
             ),
             centerTitle: true,
@@ -88,7 +88,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Category will help you group related task!',
+                  'Create card for a shopping list!',
                   style: TextStyle(
                       color: Colors.black38,
                       fontWeight: FontWeight.w600,
@@ -105,7 +105,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   autofocus: true,
                   decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Category Name...',
+                      hintText: 'Card Name...',
                       hintStyle: TextStyle(
                         color: Colors.black26,
                       )),
@@ -121,7 +121,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   children: [
                     ColorPickerBuilder(
                         color: taskColor,
-                        onColorChanged: (newColor) =>
+                        onColorChanged: (newColor)     =>
                             setState(() => taskColor = newColor)),
                     Container(
                       width: 22.0,
@@ -149,7 +149,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   if (newTask.isEmpty) {
                     final snackBar = SnackBar(
                       content: Text(
-                          'Ummm... It seems that you are trying to add an invisible task which is not allowed in this realm.'),
+                          'Card name is emapty.'),
                       backgroundColor: taskColor,
                     );
                     Scaffold.of(context).showSnackBar(snackBar);

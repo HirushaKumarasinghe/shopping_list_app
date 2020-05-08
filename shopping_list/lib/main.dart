@@ -168,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage>
                           ),
                           Container(height: 16.0),
                           Text(
-                            'You have ${_todos.where((todo) => todo.isCompleted == 0).length} tasks to complete',
+                            'You have ${_todos.where((todo) => todo.isCompleted == 0).length} shopping items to buy',
                             style: Theme.of(context).textTheme.body1.copyWith(
                                 color: Colors.white.withOpacity(0.7)),
                           ),
@@ -204,6 +204,7 @@ class _MyHomePageState extends State<MyHomePage>
                             }
                           }
                         },
+                        // get task length if task length == 0 show add task page
                         child: PageView.builder(
                           controller: _pageController,
                           itemBuilder: (BuildContext context, int index) {
@@ -285,7 +286,7 @@ class AddPageCard extends StatelessWidget {
                   height: 8.0,
                 ),
                 Text(
-                  'Add Category',
+                  'Add Card',
                   style: TextStyle(color: color),
                 ),
               ],

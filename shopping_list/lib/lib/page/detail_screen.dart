@@ -275,7 +275,7 @@ class SimpleAlertDialog extends StatelessWidget {
                 child: ListBody(
                   children: <Widget>[
                     Text(
-                        'This is a one way street! Deleting this will remove all the task assigned in this card.'),
+                        'Are you sure, you want to delete this card?.'),
                   ],
                 ),
               ),
